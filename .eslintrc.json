@@ -1,3 +1,28 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "next/core-web-vitals"
+  ],
+  "plugins": [
+    "@stylistic"
+  ],
+  "rules": {
+    "@stylistic/quotes": ["error", "single"],
+    "@stylistic/indent": ["error", 4],
+    "@stylistic/semi": ["error", "never"],
+    "@stylistic/no-extra-semi": ["error"],
+    "@stylistic/array-bracket-newline": ["error", { "multiline": true }],
+    "@stylistic/arrow-parens": ["error", "always"],
+    "@stylistic/block-spacing": ["error", "always"],
+    "@stylistic/computed-property-spacing": ["error", "never"],
+    "@stylistic/jsx-self-closing-comp": ["error", {
+      "component": true,
+      "html": true
+    }],
+    "@stylistic/jsx-wrap-multilines": ["error", {
+      "declaration": "parens-new-line",
+      "return": "parens-new-line",
+      "arrow": "parens-new-line"
+    }],
+    "@stylistic/newline-per-chained-call": ["error"]
+  }
 }

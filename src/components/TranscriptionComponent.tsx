@@ -13,7 +13,7 @@ export const TranscriptionComponent = ({ transcript }: { transcript: Transcript 
     const onTimeUpdateHandle: ReactEventHandler<HTMLAudioElement> = () => {
         if (!audioRef.current) { return }
 
-        const currentTime = Math.ceil(audioRef.current.currentTime)
+        const { currentTime } = audioRef.current
         const found = blocks.findIndex((block) => currentTime >= block.start && currentTime <= block.end)
 
         if (found) {

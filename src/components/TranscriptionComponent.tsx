@@ -85,7 +85,7 @@ export const TranscriptionComponent = ({ transcript }: { transcript: Transcript 
 
     return (
         <div className="h-screen flex flex-col pt-4 overscroll-contain">
-            <div className="flex-grow overflow-auto px-6 md:px-14 lg:px-20">
+            <div className="flex-grow overflow-auto px-6 md:px-14 lg:px-20 xl:px-40 2xl:px-60">
                 <h1 className="text-2xl mb-4">{transcript.title}</h1>
                 {blocks.map((block, index) => (
                     <p
@@ -93,7 +93,6 @@ export const TranscriptionComponent = ({ transcript }: { transcript: Transcript 
                         tabIndex={0}
                         ref={(element) => {
                             if (!element) return
-
                             paragraphsRef.current[index] = element
                         }}
                         onClick={({ currentTarget }) => {

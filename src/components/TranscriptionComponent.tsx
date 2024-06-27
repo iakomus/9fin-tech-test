@@ -56,7 +56,10 @@ export const TranscriptionComponent = ({ transcript }: { transcript: Transcript 
         if (selected === index) return
 
         setSelected(index)
+        scrollIntoView(index)
+    }
 
+    const scrollIntoView = (index: number) => {
         if (!paragraphsRef.current[index]) return
 
         paragraphsRef.current[index].scrollIntoView({

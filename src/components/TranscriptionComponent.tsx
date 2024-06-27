@@ -8,7 +8,7 @@ export const TranscriptionComponent = ({ transcript }: { transcript: Transcript 
     const paragraphsRef = useRef<(HTMLParagraphElement)[]>([])
     const { blocks } = transcript
     const [first] = blocks
-    const [selected, setSelected] = useState(0)
+    const [selected, setSelected] = useState(-1)
 
     const onTimeUpdateHandle: ReactEventHandler<HTMLAudioElement> = () => {
         if (!audioRef.current) { return }
@@ -16,7 +16,7 @@ export const TranscriptionComponent = ({ transcript }: { transcript: Transcript 
         const { currentTime } = audioRef.current
         const found = blocks.findIndex((block) => currentTime >= block.start && currentTime <= block.end)
 
-        if (found) {
+        if (found !== -1) {
             selectBlock(found)
             return
         }

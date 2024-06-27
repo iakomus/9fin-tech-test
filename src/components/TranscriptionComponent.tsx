@@ -1,7 +1,7 @@
 'use client'
 
 import { Transcript } from '@/lib/definitions'
-import { ReactEventHandler, createRef, useRef, useState } from 'react'
+import { ReactEventHandler, createRef, useEffect, useRef, useState } from 'react'
 
 export const TranscriptionComponent = ({ transcript }: { transcript: Transcript }) => {
     const audioRef = useRef<HTMLAudioElement>(null)
@@ -73,6 +73,15 @@ export const TranscriptionComponent = ({ transcript }: { transcript: Transcript 
             .fill(null)
             .map((_, i) => paragraphsRef.current[i] || createRef<HTMLParagraphElement>())
     }
+
+
+    useEffect(() => {
+        const handleResize = () => scrollIntoView(selected)
+        window.addEventListener('resize', handleResize)
+        handleResize()
+
+        return () => window.removeEventListener('resize', handleResize)
+    }, [selected])
 
     return (
         <div className="h-screen flex flex-col pt-4 overscroll-contain">

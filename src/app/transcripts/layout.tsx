@@ -1,8 +1,8 @@
+import { PropsWithChildren } from 'react'
+
 export default function TranscriptsLayout({
     children,
-}: Readonly<{
-    children: React.ReactNode
-}>) {
+}: Readonly<PropsWithChildren>) {
     return (
         <main className="min-h-screen">
             {children}

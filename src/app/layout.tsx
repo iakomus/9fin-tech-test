@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import { PropsWithChildren } from 'react'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -16,9 +17,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
     children,
-}: Readonly<{
-    children: React.ReactNode
-}>) {
+}: Readonly<PropsWithChildren>) {
     return (
         <html lang="en" className="scroll-smooth">
             <body suppressHydrationWarning className={inter.className}>

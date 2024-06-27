@@ -84,7 +84,7 @@ export const TranscriptionComponent = ({ transcript }: { transcript: Transcript 
     }, [selected])
 
     return (
-        <div className="h-screen flex flex-col overscroll-contain">
+        <div className="h-[calc(100dvh)] h-screen flex flex-col overscroll-contain">
             <div className="flex-grow overflow-auto pt-4 px-6 md:px-14 lg:px-20 xl:px-40 2xl:px-60">
                 <h1 className="text-2xl mb-4">{transcript.title}</h1>
                 {blocks.map((block, index) => (
@@ -114,7 +114,7 @@ export const TranscriptionComponent = ({ transcript }: { transcript: Transcript 
                     </p>
                 ))}
             </div>
-            <div className="w-full min-h-18 p-2 px-8 bg-slate-50 shadow-inner">
+            <div className="w-full min-h-18 py-2 px-4 md:px-8 bg-slate-50 shadow-inner">
                 <audio
                     ref={audioRef}
                     src={transcript.audioUrl}

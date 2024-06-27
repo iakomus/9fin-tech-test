@@ -99,7 +99,7 @@ export const TranscriptionComponent = ({ transcript }: { transcript: Transcript 
                         key={block.start}
                     >
                         <span
-                            className={`py-1 ${selected === index ? 'bg-amber-200' : ''}`}
+                            className={`py-1 hover:bg-blue-100 ${selected === index ? '!bg-amber-200' : ''}`}
                         >
                             {block.text}
                         </span>

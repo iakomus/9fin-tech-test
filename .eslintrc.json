@@ -23,6 +23,7 @@
       "return": "parens-new-line",
       "arrow": "parens-new-line"
     }],
-    "@stylistic/newline-per-chained-call": ["error"]
+    "@stylistic/newline-per-chained-call": ["error"],
+    "@stylistic/object-curly-spacing": ["error", "always"]
   }
 }

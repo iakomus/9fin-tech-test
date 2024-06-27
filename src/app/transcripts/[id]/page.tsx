@@ -7,7 +7,7 @@ type Props = {
 }
 
 export const generateMetadata = async ({ params: { id } }: Props): Promise<Metadata> => {
-    const { title } = await new Promise<{ title: string }>((resolve) => resolve({title: 'Title'}))
+    const { title } = await new Promise<{ title: string }>((resolve) => resolve({ title: 'Title' }))
 
     return {
         title: title,

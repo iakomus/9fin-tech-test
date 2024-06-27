@@ -13,7 +13,8 @@
   "dependencies": {
     "next": "14.2.4",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@stylistic/eslint-plugin": "^2.3.0",
@@ -32,5 +33,5 @@
     "*.{ts,tsx}": [
       "eslint --fix --quiet --config .eslintrc.json --resolve-plugins-relative-to ."
     ]
-}
+  }
 }

@@ -1,3 +1,4 @@
+import { TranscriptionComponent } from '@/components'
 import { getTranscript } from '@/lib/api'
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
@@ -32,5 +33,5 @@ export default async function TranscriptPage({ params: { id } }: Props) {
         throw new Error('not-found', { cause: result.message })
     }
 
-    return <div>page</div>
+    return <TranscriptionComponent transcript={result} />
 }

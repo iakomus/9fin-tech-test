@@ -30,7 +30,7 @@ export default async function TranscriptPage({ params: { id } }: Props) {
     const result = await getTranscript(id)
 
     if ('message' in result) {
-        throw new Error('not-found', { cause: result.message })
+        notFound()
     }
 
     return <TranscriptionComponent transcript={result} />
